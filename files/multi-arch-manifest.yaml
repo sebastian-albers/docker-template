@@ -1,0 +1,17 @@
+image: __DOCKER_HUB_USERNAME__/__CONTAINER__:__TAG__
+manifests:
+  - image: __DOCKER_HUB_USERNAME__/__CONTAINER__:__TAG__-amd64
+    platform:
+      architecture: amd64
+      os: linux
+  - image: __DOCKER_HUB_USERNAME__/__CONTAINER__:__TAG__-arm64v8
+    platform:
+      architecture: arm64
+      os: linux
+      variant: v8
+  - image: __DOCKER_HUB_USERNAME__/__CONTAINER__:__TAG__-arm32v7
+    platform:
+      architecture: arm
+      os: linux
+      variant: v7
+
