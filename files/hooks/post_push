@@ -6,11 +6,8 @@ set -euxo pipefail
 docker push "__DOCKER_HUB_USERNAME__/__CONTAINER__:latest-arm32v7"
 docker push "__DOCKER_HUB_USERNAME__/__CONTAINER__:latest-arm64v8"
 
-# push latest multi-arch image
-./push-multi-arch-image.sh latest
-
 # read version from Docker container
 version=$(./read-version.sh amd64)
 
-# push multi-arch image with version
+# push multi-arch image
 ./push-multi-arch-image.sh "${version}"

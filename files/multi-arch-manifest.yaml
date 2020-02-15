@@ -1,4 +1,5 @@
-image: __DOCKER_HUB_USERNAME__/__CONTAINER__:__TAG__
+image: __DOCKER_HUB_USERNAME__/__CONTAINER__:latest
+tags: [__TAGS__]
 manifests:
   - image: __DOCKER_HUB_USERNAME__/__CONTAINER__:latest-amd64
     platform:
