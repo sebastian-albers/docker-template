@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eou pipefail
+
 if [ $# != 2 ] ; then
   echo "Usage: $0 <path to repository> <container name>"
   exit 1
@@ -16,6 +18,9 @@ GITHUB_REPO_NAME="docker-${container_name}"
 
 # copy all files from './files/'
 pushd "${BASH_SOURCE%/*}/files" > /dev/null
+for dir in $(find . -mindepth 1 -type d) ; do
+  mkdir -p "${repo_path}/${dir}"
+done
 for file in $(find . -type f) ; do
   dst_file="${repo_path}/${file}"
   cp "${file}" "${dst_file}"
@@ -28,6 +33,9 @@ popd > /dev/null
 
 # copy all non-existent files from './templates/'
 pushd "${BASH_SOURCE%/*}/templates" > /dev/null
+for dir in $(find . -mindepth 1 -type d) ; do
+  mkdir -p "${repo_path}/${dir}"
+done
 for file in $(find . -type f) ; do
   dst_file="${repo_path}/${file}"
   if [ ! -f "${dst_file}" ] ; then
