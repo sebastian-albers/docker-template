@@ -16,5 +16,7 @@
 * Activate GitHub repository in Travis CI
   * Environment variables:
     * DOCKER_HUB_TRIGGER_URL: Docker Hub trigger url
-    * DOCKER_USERNAME: Docker username
-    * DOCKER_PASSWORD: Docker password
+  * Cron Job:
+    * Branch: master
+    * Interval: Daily
+    * Options: Do not run if there has been a build in the last 24h

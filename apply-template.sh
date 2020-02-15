@@ -24,10 +24,10 @@ done
 for file in $(find . -type f) ; do
   dst_file="${repo_path}/${file}"
   cp "${file}" "${dst_file}"
-  sed -i'' "s|__CONTAINER__|${container_name}|g" "${dst_file}"
-  sed -i'' "s|__DOCKER_HUB_USERNAME__|${DOCKER_HUB_USERNAME}|g" "${dst_file}"
-  sed -i'' "s|__GITHUB_USERNAME__|${GITHUB_USERNAME}|g" "${dst_file}"
-  sed -i'' "s|__GITHUB_REPO_NAME__|${GITHUB_REPO_NAME}|g" "${dst_file}"
+  sed -i '' "s|__CONTAINER__|${container_name}|g" "${dst_file}"
+  sed -i '' "s|__DOCKER_HUB_USERNAME__|${DOCKER_HUB_USERNAME}|g" "${dst_file}"
+  sed -i '' "s|__GITHUB_USERNAME__|${GITHUB_USERNAME}|g" "${dst_file}"
+  sed -i '' "s|__GITHUB_REPO_NAME__|${GITHUB_REPO_NAME}|g" "${dst_file}"
 done
 popd > /dev/null
 
@@ -40,10 +40,10 @@ for file in $(find . -type f) ; do
   dst_file="${repo_path}/${file}"
   if [ ! -f "${dst_file}" ] ; then
     cp "${file}" "${dst_file}"
-    sed -i'' "s|__CONTAINER__|${container_name}|g" "${dst_file}"
-    sed -i'' "s|__DOCKER_HUB_USERNAME__|${DOCKER_HUB_USERNAME}|g" "${dst_file}"
-    sed -i'' "s|__GITHUB_USERNAME__|${GITHUB_USERNAME}|g" "${dst_file}"
-    sed -i'' "s|__GITHUB_REPO_NAME__|${GITHUB_REPO_NAME}|g" "${dst_file}"
+    sed -i '' "s|__CONTAINER__|${container_name}|g" "${dst_file}"
+    sed -i '' "s|__DOCKER_HUB_USERNAME__|${DOCKER_HUB_USERNAME}|g" "${dst_file}"
+    sed -i '' "s|__GITHUB_USERNAME__|${GITHUB_USERNAME}|g" "${dst_file}"
+    sed -i '' "s|__GITHUB_REPO_NAME__|${GITHUB_REPO_NAME}|g" "${dst_file}"
   fi
 done
 popd > /dev/null
